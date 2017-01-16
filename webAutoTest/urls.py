@@ -19,5 +19,6 @@ from polls import views as learn_views
 
 urlpatterns = [
     url(r'^$', learn_views.index),
+    url(r'^web/', learn_views.web),
     url(r'^admin/', admin.site.urls),
 ]

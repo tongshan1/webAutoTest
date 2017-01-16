@@ -1,0 +1,7 @@
+2017-01-16 16:06:13,665 - DEBUG - remote_connection.py - line415: POST http://127.0.0.1:54366/session {"desiredCapabilities": {"javascriptEnabled": true, "browserName": "chrome", "chromeOptions": {"extensions": [], "args": []}, "version": "", "platform": "ANY"}, "requiredCapabilities": {}}
+2017-01-16 16:06:14,421 - DEBUG - remote_connection.py - line510: Finished Request
+2017-01-16 16:06:14,422 - DEBUG - remote_connection.py - line415: POST http://127.0.0.1:54366/session/f0bc747fe96435eb1059db9bb09140a4/window/current/maximize {"windowHandle": "current", "sessionId": "f0bc747fe96435eb1059db9bb09140a4"}
+2017-01-16 16:06:16,240 - DEBUG - remote_connection.py - line510: Finished Request
+2017-01-16 16:06:16,241 - DEBUG - remote_connection.py - line415: POST http://127.0.0.1:54366/session/f0bc747fe96435eb1059db9bb09140a4/timeouts {"type": "page load", "ms": 120000.0, "sessionId": "f0bc747fe96435eb1059db9bb09140a4"}
+2017-01-16 16:06:16,242 - DEBUG - remote_connection.py - line510: Finished Request
+2017-01-16 16:06:16,271 - DEBUG - remote_connection.py - line415: POST http://127.0.0.1:54366/session/f0bc747fe96435eb1059db9bb09140a4/url {"url": "https://www.btcchina.com/", "sessionId": "f0bc747fe96435eb1059db9bb09140a4"}

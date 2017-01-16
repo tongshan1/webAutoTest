@@ -1,0 +1,37 @@
+# http://www.seleniumhq.org/download/
+
+Test01:
+  website: btcc
+  browser: chrome
+  user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
+  test_case:
+#    - contactuspage
+#    - propage
+#    - homepage
+
+Test02:
+  website: spot_usd
+  browser: firefox
+  user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
+  test_case:
+#    - testSendEmail
+
+Test03:
+  website: btcchina
+  browser: chrome
+  user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
+  test_case:
+    - deposit
+#    - homepage
+#    - trade
+#    - withdraw
+
+Test04:
+  website: btcchina
+  browser: firefox
+  user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
+  test_case:
+#    - deposit
+#    - homepage
+#    - trade
+#    - withdraw
