@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls',
+    'AutoTest_project',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'webAutoTest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'AutoTest_project/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "AutoTest_project/static"),
     # '/path/to/others/static/',  # 用不到的时候可以不写这一行
 )
 

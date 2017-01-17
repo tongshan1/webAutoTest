@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from polls import views as learn_views
+from AutoTest_project import views as views
 
 urlpatterns = [
-    url(r'^$', learn_views.index),
-    url(r'^web/', learn_views.web),
+    url(r'^$', views.index),
+    url(r'^web/', views.WebView.as_view(), name='web'),
+    url(r'^web_detail/(?P<Test_id>\d+)$', views.WebDetailView.as_view(), name='web_detail'),
+    # url(r'^webEdit/', views.edit_web),
     url(r'^admin/', admin.site.urls),
 ]

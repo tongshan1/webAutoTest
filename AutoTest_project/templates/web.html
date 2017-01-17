@@ -1,0 +1,53 @@
+{% extends 'blank.html' %}
+{% block content %}
+<div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              网站管理
+
+                          </header>
+
+                          <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                  <th><i class="icon_id-2_alt"></i> 编号</th>
+                                  <th><i class="icon_desktop"></i> 网站</th>
+                                  <th><i class="icon_book"></i> 测试用例</th>
+                                  <th><i class="icon_profile"></i> 测试账号</th>
+                                  <th><i class="icon_mail_alt"></i> Email</th>
+                                  <th><i class="icon_circle-slelected"></i> 浏览器</th>
+                                  <th><i class="icon_cogs"></i> 操作</th>
+                              </tr>
+                              {% for test in test_list %}
+                                  <tr>
+                                  <td>{{ test.pk }}</td>
+                                  <td>{{ test.website }}</td>
+                                  <td>{{ test.test_cases }}</td>
+                                  <td>{{ test.test_user.user_name }}</td>
+                                  <td>{{ test.email }}</td>
+                                  <td>{{ test.browser.browser }}</td>
+                                  <td><div class="btn-group">
+                                      <a class="btn btn-primary" href="{% url 'web_detail' test.pk %}">编辑</a>
+                                      <a class="btn btn-success" href="#">运行</a>
+                                      <a class="btn btn-danger" href="#">删除</a>
+                                      </div>
+                                  </td>
+
+                                  </tr>
+
+                              {% endfor %}
+                              <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td><a class="btn btn-info"> 增加</a></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                      </section>
+                  </div>
+              </div>
+{% endblock %}
