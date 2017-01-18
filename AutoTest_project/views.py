@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
 # from django.http import HttpResponse
 
-from django.views.generic import ListView, DetailView
-from AutoTest_project.models import Test_web
+from django.views.generic import ListView, DetailView, FormView
+from AutoTest_project.models import Test_web, browser
 
 
 def index(request):
@@ -46,3 +46,26 @@ class WebDetailView(DetailView):
         obj = super(WebDetailView, self).get_object()
         # obj.body = markdown2.markdown(obj.body, extras=['fenced-code-blocks'], )
         return obj
+
+    def get_context_data(self, **kwargs):
+        kwargs["browser_list"] = browser.objects.all()
+        return super(WebDetailView, self).get_context_data(**kwargs)
+
+
+class WebEditView(FormView):
+    # form_class = BlogCommentForm
+    template_name = "webDetail.html"
+
+    def form_valid(self, form):
+        # target_browser = get_object_or_404(Test_web, pk=self.kwargs['browser_id'])
+        test_web = form.save(commit=False)
+
+        # test_web.browser = target_browser
+
+        test_web.save()
+
+    def form_invalid(self, form):
+        return render(self.request, 'webDetail.html', {
+            'message': "11111"
+        })
+

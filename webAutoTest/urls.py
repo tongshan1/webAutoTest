@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^web/', views.WebView.as_view(), name='web'),
     url(r'^web_detail/(?P<Test_id>\d+)$', views.WebDetailView.as_view(), name='web_detail'),
-    # url(r'^webEdit/', views.edit_web),
+    url(r'^web_detail/(?P<Test_id>\d+)/edit/$', views.WebEditView.as_view(), name="web_edit"),
     url(r'^admin/', admin.site.urls),
 ]
