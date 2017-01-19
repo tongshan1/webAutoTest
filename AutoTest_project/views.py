@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404
 
 from django.views.generic import ListView, DetailView, FormView
 from AutoTest_project.models import Test_web, browser
+from .forms import TestWebForm
 
 
 def index(request):
@@ -49,23 +50,25 @@ class WebDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         kwargs["browser_list"] = browser.objects.all()
+        kwargs['form'] = TestWebForm()
         return super(WebDetailView, self).get_context_data(**kwargs)
 
 
 class WebEditView(FormView):
-    # form_class = BlogCommentForm
+    form_class = TestWebForm
     template_name = "webDetail.html"
 
     def form_valid(self, form):
+        print("ok")
         # target_browser = get_object_or_404(Test_web, pk=self.kwargs['browser_id'])
-        test_web = form.save(commit=False)
+        # test_web = form.save(commit=False)
 
         # test_web.browser = target_browser
 
-        test_web.save()
+        # test_web.save()
 
     def form_invalid(self, form):
+        print("ng")
         return render(self.request, 'webDetail.html', {
             'message': "11111"
         })
-
