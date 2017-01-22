@@ -4,14 +4,11 @@ from django import forms
 from .models import browser
 
 browser_list = browser.objects.all()
-browser_choice =(
-    ('1', 'chrome'),
-    ('2', 'firefox'),
-)
-# for b in browser_list:
-#     browser_choice.append(b.browser)
+browser_choice =[]
 
-# print(browser_choice)
+for browser in browser_list:
+    tmp = (browser.id, browser.browser)
+    browser_choice.append(tmp)
 
 
 class TestWebForm(forms.Form):
@@ -21,7 +18,4 @@ class TestWebForm(forms.Form):
     test_user = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control round-input'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control round-input'}))
     browser_input = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control round-input'}),
-                                choices=browser_choice)
-
-
-
+                                choices=tuple(browser_choice))
