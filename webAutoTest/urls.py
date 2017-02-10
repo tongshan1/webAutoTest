@@ -20,7 +20,7 @@ from AutoTest_project import views as views
 urlpatterns = [
     # url(r'^$', views.index),
     url(r'^web/', views.WebView.as_view(), name='web'),
-    url(r'^web_detail/(?P<Test_id>\d+)$', views.WebDetailView.as_view(), name='web_detail'),
-    url(r'^web_detail/(?P<Test_id>\d+)/edit/$', views.WebEditView.as_view(), name="web_edit"),
+    url(r'^web_detail/edit/(?P<Test_id>\d+)/$', views.WebEditView.as_view(), name="web_edit"),
+    url(r'^web/fun/(?P<Test_id>\d+)/$', views.WebEditView.as_view(), name="web_run"),
     url(r'^admin/', admin.site.urls),
 ]
